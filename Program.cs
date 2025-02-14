@@ -29,7 +29,6 @@ int ReadOperation() {
     }
 }
 
-
 void InputA() {
     Console.Write("Введите число A: ");
     String line = Console.ReadLine();
@@ -62,6 +61,12 @@ void Plus(double? a, double? b) {
     else Console.WriteLine($"A + B = {a + b}");
 }
 
+void Minus(double? a, double? b) {
+    if (a == null) Console.WriteLine("Число A не указано");
+    else if (b == null) Console.WriteLine("Число B не указано");
+    else Console.WriteLine($"A - B = {a - b}");
+}
+
 while (true) {
     ShowMenu();
     int op = ReadOperation();
@@ -76,6 +81,7 @@ while (true) {
             Plus(a, b);
             break;
         case 4:
+            Minus(a, b);
             break;
         case 5:
             break;
