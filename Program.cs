@@ -1,5 +1,5 @@
-﻿int a;
-int b;
+﻿double? a = null;
+double? b = null;
 
 String[] Menu = ["1) ввести A",
                  "2) ввести B",
@@ -29,6 +29,12 @@ int ReadOperation() {
     }
 }
 
+void Divide(double? a, double? b) {
+    if (a == null) Console.WriteLine("Число A не указано");
+    else if (b == null) Console.WriteLine("Число B не указано");
+    else Console.WriteLine($"A / B = {a / b}");
+}
+
 while (true) {
     ShowMenu();
     int op = ReadOperation();
@@ -44,6 +50,7 @@ while (true) {
         case 5:
             break;
         case 6:
+            Divide(a, b);
             break;
         default:
             break;
