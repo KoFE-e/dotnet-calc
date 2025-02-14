@@ -1,5 +1,5 @@
-﻿int a;
-int b;
+﻿double a;
+double b;
 
 String[] Menu = ["1) ввести A",
                  "2) ввести B",
@@ -29,11 +29,25 @@ int ReadOperation() {
     }
 }
 
+void InputA() {
+    Console.Write("Введите число A: ");
+    String line = Console.ReadLine();
+    double numberA;
+    try {
+        numberA = Convert.ToDouble(line);
+        a = numberA;
+        Console.WriteLine($"A = {a}\n");
+    } catch {
+        Console.WriteLine("Некорректный ввод числа\n");
+    }
+}
+
 while (true) {
     ShowMenu();
     int op = ReadOperation();
     switch (op) {
         case 1:
+            InputA();
             break;
         case 2:
             break;
