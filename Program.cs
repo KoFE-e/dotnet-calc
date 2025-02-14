@@ -1,4 +1,4 @@
-﻿double? a = null;
+double? a = null;
 double? b = null;
 
 String[] Menu = ["1) ввести A",
@@ -29,6 +29,33 @@ int ReadOperation() {
     }
 }
 
+
+void InputA() {
+    Console.Write("Введите число A: ");
+    String line = Console.ReadLine();
+    double numberA;
+    try {
+        numberA = Convert.ToDouble(line);
+        a = numberA;
+        Console.WriteLine($"A = {a}\n");
+    } catch {
+        Console.WriteLine("Некорректный ввод числа\n");
+    }
+}
+
+void InputB() {
+    Console.Write("Введите число B: ");
+    String line = Console.ReadLine();
+    double numberB;
+    try {
+        numberB = Convert.ToDouble(line);
+        b = numberB;
+        Console.WriteLine($"B = {b}\n");
+    } catch {
+        Console.WriteLine("Некорректный ввод числа\n");
+    }
+}
+
 void Plus(double? a, double? b) {
     if (a == null) Console.WriteLine("Число A не указано");
     else if (b == null) Console.WriteLine("Число B не указано");
@@ -40,8 +67,10 @@ while (true) {
     int op = ReadOperation();
     switch (op) {
         case 1:
+            InputA();
             break;
         case 2:
+            InputB();
             break;
         case 3:
             Plus(a, b);
