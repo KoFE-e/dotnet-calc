@@ -29,6 +29,12 @@ int ReadOperation() {
     }
 }
 
+void Times(double? a, double? b) {
+    if (a == null) Console.WriteLine("Число A не указано");
+    else if (b == null) Console.WriteLine("Число B не указано");
+    else Console.WriteLine($"A * B = {a * b}");
+}
+
 void InputA() {
     Console.Write("Введите число A: ");
     String line = Console.ReadLine();
@@ -84,6 +90,7 @@ while (true) {
             Minus(a, b);
             break;
         case 5:
+            Times(a, b);
             break;
         case 6:
             break;
