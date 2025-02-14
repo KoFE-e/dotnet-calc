@@ -29,6 +29,19 @@ int ReadOperation() {
     }
 }
 
+void InputA() {
+    Console.Write("Введите число A: ");
+    String line = Console.ReadLine();
+    double numberA;
+    try {
+        numberA = Convert.ToDouble(line);
+        a = numberA;
+        Console.WriteLine($"A = {a}\n");
+    } catch {
+        Console.WriteLine("Некорректный ввод числа\n");
+    }
+}
+
 void InputB() {
     Console.Write("Введите число B: ");
     String line = Console.ReadLine();
@@ -47,6 +60,7 @@ while (true) {
     int op = ReadOperation();
     switch (op) {
         case 1:
+            InputA();
             break;
         case 2:
             InputB();
