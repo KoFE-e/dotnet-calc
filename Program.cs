@@ -29,6 +29,12 @@ int ReadOperation() {
     }
 }
 
+void Divide(double? a, double? b) {
+    if (a == null) Console.WriteLine("Число A не указано");
+    else if (b == null) Console.WriteLine("Число B не указано");
+    else Console.WriteLine($"A / B = {a / b}");
+}
+
 void Times(double? a, double? b) {
     if (a == null) Console.WriteLine("Число A не указано");
     else if (b == null) Console.WriteLine("Число B не указано");
@@ -93,6 +99,7 @@ while (true) {
             Times(a, b);
             break;
         case 6:
+            Divide(a, b);
             break;
         default:
             break;
