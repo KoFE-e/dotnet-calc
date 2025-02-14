@@ -15,4 +15,22 @@ void ShowMenu() {
     }
 }
 
-ShowMenu();
+int ReadOperation() {
+    String line = Console.ReadLine();
+    int choice;
+    try {
+        choice = Convert.ToInt32(line);
+        if (choice < 1 || choice > 6) throw new Exception("");
+        return choice;
+    } catch {
+        Console.WriteLine("Некорректный выбор опции\n");
+        ShowMenu();
+        return ReadOperation();
+    }
+}
+
+while (true) {
+    ShowMenu();
+    ReadOperation();
+}
+
